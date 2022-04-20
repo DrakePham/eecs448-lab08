@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="textPara" style="border-style: dashed;">
+
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+        </div>
+        <div>
+            <h1>Border:</h1>
+            <div>
+                <Label>Red value:</Label>
+                <input type="text" id="border-red">
+            </div>
+            <div>
+                <Label>Green value:</Label>
+                <input type="text" id="border-green">
+            </div>
+            <div>
+                <Label>Blue value:</Label>
+                <input type="text" id="border-blue">
+            </div>
+            <div>
+                <Label>Width value:</Label>
+                <input type="text" id="border-width">
+            </div>
+        </div>
+        <div>
+            <h1>Background :</h1>
+            <div>
+                <Label>Red value:</Label>
+                <input type="text" id="background-red">
+            </div>
+            <div>
+                <Label>Green value:</Label>
+                <input type="text" id="background-green">
+            </div>
+            <div>
+                <Label>Blue value:</Label>
+                <input type="text" id ="background-blue">
+            </div>
+
+        </div>
+        <input type = "button" value = "Undapte" onclick="update()">
+        <div>
+            <span id = "messageBorder"> </span> <br><br>
+            <span id = "messageBackGround"> </span> <br><br>
+        </div>
+
+    </div>
+</body>
+<script>
+function update(){
+    let borderBlue=document.getElementById("border-blue").value;
+    let borderRed=document.getElementById("border-red").value;
+    let borderGreen=document.getElementById("border-green").value;
+    let borderwidth=document.getElementById("border-width").value;
+
+    let backgroundRed=document.getElementById("background-red").value;
+    let backgroundBlue=document.getElementById("background-blue").value;
+    let backgroundGreen=document.getElementById("background-green").value;
+    console.log(backgroundGreen);
+
+    colerBorder='rgb(' + borderRed + ',' + borderGreen + ',' + borderBlue + ')';
+    colerBackground='rgb(' + backgroundRed + ',' + backgroundGreen + ',' + backgroundBlue + ')';
+
+    document.getElementById("textPara").style.borderColor = colerBorder;
+    document.getElementById("textPara").style.borderWidth = borderwidth;
+    document.getElementById("textPara").style.backgroundColor = colerBackground;
+    document.getElementById("messageBorder").innerHTML = 'Boder Color : '+colerBorder +' , Boder Width: '+ borderwidth;
+    document.getElementById("messageBackGround").innerHTML = 'Background Color : '+colerBackground;
+}
+// document.getElementById("background-blue").addEventListener('input',update);
+</script>
+</html>

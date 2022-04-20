@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function verify(){
+        let pass = document.getElementById("password").value;
+        let rePass = document.getElementById("rePassword").value;
+        
+        if (pass !== rePass){
+            document.getElementById("message").innerHTML = "The passwords entered don't match";  
+            
+        }else{
+            if(pass.length<8){
+                document.getElementById("message").innerHTML = "The passwords are not at least 8 characters long";
+            }else{
+                document.getElementById("message").innerHTML = "";
+            }
+
+        }
+    }
+</script>
+<body>
+    <div>
+        
+
+
+            <div>
+                <label id="">Password:</label>
+                <input type="password" id="password">
+            </div>
+            <div>
+                <label id="">Re-Password:</label>
+                <input type="password" id="rePassword">
+            </div>
+            <div>
+                <input type = "button" value = "Validate" onclick="verify()">
+                <span id = "message"> </span> <br><br>
+            </div>
+
+    </div>
+</body>
+
+</html>
